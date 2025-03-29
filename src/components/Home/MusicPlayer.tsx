@@ -1,13 +1,21 @@
 import WavesurferPlayer from "@wavesurfer/react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import WaveSurfer from "wavesurfer.js";
 import "./Home.css";
 
 type MusicPlayerProps = {
   soundPath: string;
+  isActive: boolean;
+  onPlay: () => void;
+  onPause: () => void;
 };
 
-const MusicPlayer = ({ soundPath }: MusicPlayerProps) => {
+const MusicPlayer = ({
+  soundPath,
+  isActive,
+  onPlay,
+  onPause,
+}: MusicPlayerProps) => {
   const [isPlaying, setIsPlaying] = useState(false);
   const [wavesurfer, setWavesurfer] = useState<WaveSurfer | null>(null);
 
@@ -17,14 +25,30 @@ const MusicPlayer = ({ soundPath }: MusicPlayerProps) => {
   };
 
   const onPlayPause = () => {
-    wavesurfer && wavesurfer.playPause();
+    if (!wavesurfer) return;
+
+    if (isActive) {
+      wavesurfer.pause();
+      onPause();
+    } else {
+      wavesurfer.play();
+      onPlay();
+    }
   };
+
+  useEffect(() => {
+    if (!wavesurfer) return;
+
+    if (!isActive && wavesurfer.isPlaying()) {
+      wavesurfer.pause();
+    }
+  }, [isActive, wavesurfer]);
 
   return (
     <div className="audio-player">
       <button onClick={onPlayPause}>
         <i className="material-icons" style={{ fontSize: "2rem" }}>
-          {isPlaying ? "pause_circle_filled" : "play_circle_filled"}
+          {isActive ? "pause_circle_filled" : "play_circle_filled"}
         </i>
       </button>
       <WavesurferPlayer
@@ -36,8 +60,8 @@ const MusicPlayer = ({ soundPath }: MusicPlayerProps) => {
         progressColor={"#fff"}
         url={soundPath}
         onReady={onReady}
-        onPlay={() => setIsPlaying(true)}
-        onPause={() => setIsPlaying(false)}
+        onPlay={onPlay}
+        onPause={onPause}
       />
     </div>
   );

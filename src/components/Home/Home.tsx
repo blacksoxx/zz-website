@@ -4,8 +4,10 @@ import Footer from "../Footer/Footer";
 import Card from "./Card";
 import { musicData } from "../../constants";
 import "./Home.css";
+import { useState } from "react";
 
 const Home = () => {
+  const [activePlayer, setActivePlayer] = useState<string | null>(null);
   return (
     <div
       className="home-container"
@@ -27,7 +29,12 @@ const Home = () => {
         </div>
         <div className="details-section">
           {musicData.map((music, index) => (
-            <Card key={index} {...music} />
+            <Card
+              key={index}
+              {...music}
+              activePlayer={activePlayer}
+              setActivePlayer={setActivePlayer}
+            />
           ))}
         </div>
       </main>
