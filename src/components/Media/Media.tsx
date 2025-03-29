@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Footer from '../Footer/Footer';
 import Header from '../Header/Header';
 import { Helmet } from 'react-helmet';
@@ -13,6 +13,13 @@ interface Post {
 }
 
 const Media: React.FC = () => {
+    // Dynamic Header Blur Effect
+    useEffect(() => {
+        const header = document.querySelector('.header-container') as HTMLElement;
+        if (header) {
+          header.style.backdropFilter = `blur(20px)`; // Max blur of 10px
+        }
+      }, []);
   const posts: Post[] = [
     {
       id: '1',
@@ -57,9 +64,7 @@ const Media: React.FC = () => {
   ];
 
   return (
-    <div
-      className="news-container"
-    >
+    <div className="news-container">
       <Helmet>
         <title>Media | Zied Zouari</title>
       </Helmet>
