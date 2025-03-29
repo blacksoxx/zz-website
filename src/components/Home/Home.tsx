@@ -94,19 +94,11 @@ const Home: React.FC = () => {
 
   // Dynamic Header Blur Effect
   useEffect(() => {
-    const handleScroll = () => {
       const header = document.querySelector('.header-container') as HTMLElement;
       if (header) {
-        const scrollPosition = window.scrollY;
-        header.style.backdropFilter = `blur(${Math.min(scrollPosition / 5, 10)}px)`; // Max blur of 10px
+        header.style.backdropFilter = `blur(20px)`; // Max blur of 10px
       }
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => {
-      window.removeEventListener('scroll', handleScroll); // Cleanup
-    };
-  }, []);
+    }, []);
 
   // Initialize Wavesurfer for each card
   // Update your useEffect for WaveSurfer initialization like this:

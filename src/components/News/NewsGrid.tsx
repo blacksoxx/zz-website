@@ -58,19 +58,12 @@ const newsPosts: NewsPost[] = [
 ];
 
 const NewsGrid: React.FC = () => {
+  // Dynamic Header Blur Effect
   useEffect(() => {
-      const handleScroll = () => {
-        const header = document.querySelector('.header-container') as HTMLElement;
-        if (header) {
-          const scrollPosition = window.scrollY;
-          header.style.backdropFilter = `blur(${Math.min(scrollPosition / 5, 10)}px)`; // Max blur of 10px
-        }
-      };
-  
-      window.addEventListener('scroll', handleScroll);
-      return () => {
-        window.removeEventListener('scroll', handleScroll); // Cleanup
-      };
+      const header = document.querySelector('.header-container') as HTMLElement;
+      if (header) {
+        header.style.backdropFilter = `blur(20px)`; 
+      }
     }, []);
   return (
     <div className="news-page" style={{ backgroundImage: `url('/background.jpg')` }}>

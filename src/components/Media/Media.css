@@ -46,7 +46,7 @@ body {
 }
 
 .post-card {
-  background-color: rgba(218, 197, 167, 0.05);
+  background-color: rgba(26, 26, 26, 0.5);
   border: 1px solid rgba(218, 197, 167, 0.15);
   padding: 2.5rem;
   border-radius: 4px;

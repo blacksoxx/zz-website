@@ -5,21 +5,12 @@ import Footer from '../Footer/Footer';
 import { Helmet } from 'react-helmet';
 
 const About: React.FC = () => {
-  // Dynamic Header Blur Effect
   useEffect(() => {
-    const handleScroll = () => {
       const header = document.querySelector('.header-container') as HTMLElement;
       if (header) {
-        const scrollPosition = window.scrollY;
-        header.style.backdropFilter = `blur(${Math.min(scrollPosition / 10, 10)}px)`;
+        header.style.backdropFilter = `blur(20px)`; 
       }
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => {
-      window.removeEventListener('scroll', handleScroll); // Cleanup
-    };
-  }, []);
+    }, []);
 
   return (
     <div className="about-container">
