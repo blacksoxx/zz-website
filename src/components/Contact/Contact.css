@@ -1,0 +1,115 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap');
+
+/* Reset default styles */
+h1, h2, h3, button {
+  margin: 0;
+  padding: 0;
+  font-family: inherit;
+  font-weight: inherit;
+  color: inherit;
+}
+
+/* Global container styles */
+.contact-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent overlay */
+  color: #e6e6e6;
+  font-family: 'Inter', sans-serif; /* Default font */
+  position: relative; /* Ensure proper stacking context */
+  z-index: 1; /* Keep content above the background image */
+}
+
+.contact-content {
+  flex: 1;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative; /* Ensure proper stacking context */
+  z-index: 1; /* Keep content above the background image */
+}
+
+.contact-form-section {
+  max-width: 500px;
+  background-color: rgba(26, 26, 26, 0.8); /* Semi-transparent dark background */
+  padding: 40px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  text-align: left;
+}
+
+/* Apply Quicksand Light 300 to specific elements */
+.contact-form-section h2 {
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 300;
+  font-size: 0.8rem;
+  color: #dac5a7;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  margin-bottom: 10px;
+}
+
+.contact-form-section h1 {
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 300;
+  font-size: 3rem;
+  margin-bottom: 30px;
+  color: #dac5a7;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  background-color: rgba(51, 51, 51, 0.8); /* Semi-transparent input background */
+  border: none;
+  color: #e6e6e6;
+  font-size: 1rem;
+  border-radius: 4px;
+}
+
+.contact-form button {
+  background-color: #dac5a7;
+  color: #1d1e1f;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.2s ease;
+}
+
+.contact-form button:hover {
+  background-color: rgba(218, 197, 167, 0.9);
+}
+
+.social-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.social-links button {
+  background-color: rgba(26, 26, 26, 0.8); /* Semi-transparent button background */
+  color: #dac5a7;
+  border: 1px solid rgba(218, 197, 167, 0.15);
+  padding: 10px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.2s ease;
+}
+
+.social-links button:hover {
+  background-color: rgba(218, 197, 167, 0.1);
+}
+
+.social-links button span {
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 300;
+}

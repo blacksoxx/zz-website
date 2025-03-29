@@ -1,0 +1,132 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+
+/* General Styles */
+.about-container {
+  font-family: 'Quicksand', sans-serif;
+  background-color: #0d0d0d; /* Dark black background */
+  color: #dac5a7; /* Light beige/gold text */
+  line-height: 1.6;
+  padding: 20px;
+}
+
+.about-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Hero Section */
+.hero-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 40px;
+}
+
+.hero-image {
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.hero-image img {
+  width: 100%;
+  height: auto;
+  transition: transform 0.3s ease;
+}
+
+.hero-image:hover img {
+  transform: scale(1.05);
+}
+
+.hero-text {
+  flex: 1;
+  text-align: right;
+}
+
+.hero-text h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: #dac5a7; /* Light beige/gold */
+}
+
+.hero-text p {
+  font-size: 1rem;
+  color: rgba(218, 197, 167, 0.8); /* Slightly lighter for contrast */
+  margin-bottom: 20px;
+}
+
+.arrow-button {
+  background-color: transparent;
+  border: none;
+  color: #dac5a7; /* Light beige/gold */
+  font-size: 0.9rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  transition: color 0.3s ease;
+}
+
+.arrow-button:hover {
+  color: #fff; /* White on hover */
+}
+
+/* About Section */
+.about-section {
+  background-color: rgba(26, 26, 26, 0.5); /* Semi-transparent dark background */
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.about-section h2 {
+font-family: 'Inter Light', sans-serif;
+  font-size: 1.8rem;
+  font-weight: 300;
+  margin-bottom: 20px;
+  color: #dac5a7; /* Light beige/gold */
+}
+
+.about-section p {
+  font-size: 1rem;
+  color: rgba(218, 197, 167, 0.7); /* Slightly lighter for readability */
+  margin-bottom: 20px;
+}
+
+.profile-image {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Social Media Links */
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 40px;
+}
+
+.social-links a {
+  background-color: rgba(26, 26, 26, 0.5); /* Semi-transparent dark background */
+  color: #dac5a7; /* Light beige/gold */
+  border: 1px solid rgba(218, 197, 167, 0.15); /* Match Header border */
+  padding: 10px 20px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.social-links a:hover {
+  background-color: rgba(218, 197, 167, 0.1); /* Slightly brighter on hover */
+  color: #fff; /* White on hover */
+}
