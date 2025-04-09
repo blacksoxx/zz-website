@@ -12,7 +12,7 @@
 
 .header-container {
   width: auto; /* Adjust width to fit content */
-  max-width: 900px; /* Reduce max-width to make the header more compact */
+  max-width: 900px; /* Compact width for desktop */
   height: 63.5px;
   display: flex;
   align-items: center;
@@ -21,7 +21,7 @@
   border: 1px solid rgba(218, 197, 167, 0.15);
   padding: 0 10px; /* Reduce padding to make it more compact */
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow for depth */
-  backdrop-filter: blur(10px); /* Apply blur effect here */
+  backdrop-filter: blur(10px); 
   transition: backdrop-filter 0.3s ease;
 }
 
@@ -31,23 +31,23 @@
 }
 
 .logo {
-  width: 58px;
-  height: 22px;
+  width: clamp(40px, 5vw, 58px); /* Responsive logo size */
+  height: auto; /* Maintain aspect ratio */
   object-fit: contain;
 }
 
 .nav {
   display: flex;
   align-items: center;
-  gap: 15px; /* Further reduce gap between navigation links */
+  gap: clamp(10px, 2vw, 15px); /* Responsive gap between navigation links */
 }
 
 .nav-link {
   color: #DAC5A7;
   text-decoration: none;
-  font-family: 'Inter', sans-serif; /* Updated to Inter */
-  font-size: 12.7px;
-  font-weight: 300; /* Thinner font weight */
+  font-family: 'Inter', sans-serif;
+  font-size: clamp(10px, 1.2vw, 12.7px); /* Responsive font size */
+  font-weight: 300;
   letter-spacing: 1.5px;
   text-transform: uppercase;
   line-height: 15.6px;
@@ -63,10 +63,10 @@
   color: #1D1E1F;
   border: 1px solid rgba(218, 197, 167, 0.15);
   border-radius: 2px;
-  padding: 10px 16px;
-  font-family: 'Inter', sans-serif; /* Updated to Inter */
-  font-size: 12.09px;
-  font-weight: 300; /* Thinner font weight */
+  padding: clamp(8px, 1vw, 10px) clamp(12px, 1.5vw, 16px); /* Responsive padding */
+  font-family: 'Inter', sans-serif;
+  font-size: clamp(10px, 1.2vw, 12.09px); /* Responsive font size */
+  font-weight: 300;
   letter-spacing: 1.5px;
   text-transform: uppercase;
   line-height: 19.5px;
@@ -76,4 +76,29 @@
 
 .lets-talk-button:hover {
   background-color: rgba(218, 197, 167, 0.9);
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+  .header-container {
+    max-width: 100%; /* Span the full width on mobile */
+    padding: 0 10px; /* Add padding for smaller screens */
+  }
+
+  .nav {
+    gap: clamp(5px, 1vw, 10px); /* Reduce gap between navigation links on mobile */
+  }
+
+  .logo {
+    width: clamp(30px, 5vw, 45px); /* Smaller logo on mobile */
+  }
+
+  .nav-link {
+    font-size: clamp(9px, 1.2vw, 11px); /* Slightly smaller font size */
+  }
+
+  .lets-talk-button {
+    font-size: clamp(9px, 1.2vw, 11px); /* Slightly smaller font size */
+    padding: clamp(6px, 1vw, 8px) clamp(10px, 1.5vw, 14px); /* Reduced padding */
+  }
 }

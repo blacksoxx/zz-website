@@ -12,7 +12,7 @@ body {
 .news-page {
   display: flex;
   flex-direction: column;
-  min-height: 100vh; 
+  min-height: 100vh;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -20,75 +20,165 @@ body {
 
 .news-main {
   flex-grow: 1; /* Allows the main content to grow and push the footer to the bottom */
-  padding: 2rem; /* Adds padding around the grid */
+  padding: clamp(1rem, 2vw, 2rem); /* Responsive padding */
 }
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 2rem;
+  grid-template-columns: repeat(3, minmax(0, 1fr)); /* 3 columns for desktop */
+  gap: clamp(1rem, 2vw, 2rem); /* Responsive gap between cards */
 }
 
-.grid.max-md\:grid-cols-2 {
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+/* Responsive Grid Layout */
+@media (max-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)); /* 2 columns for tablets */
+  }
 }
 
-.grid.max-sm\:grid-cols-1 {
-  grid-template-columns: repeat(1, minmax(0, 1fr));
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(1, minmax(0, 1fr)); /* 1 column for mobile */
+  }
 }
 
 /* News Card Styles */
 .news-card {
-  background-color: rgba(26, 26, 26, 0.5);
+  background-color: rgba(26, 26, 26, 0.8);
   border: 1px solid rgba(218, 197, 167, 0.15);
-  padding: 2.5rem;
+  padding: clamp(1.5rem, 2vw, 2.5rem); /* Responsive padding */
   border-radius: 4px;
   text-align: left;
+  cursor: pointer; /* Indicate clickable */
+  transition: transform 0.3s ease;
+}
+
+.news-card:hover {
+  transform: translateY(-5px); /* Slight hover effect */
 }
 
 .news-card img {
   width: 100%;
-  height: 219px;
+  height: clamp(150px, 20vw, 219px); /* Responsive height */
   object-fit: cover;
   border-radius: 2px;
-  margin-bottom: 2rem;
+  margin-bottom: clamp(1rem, 2vw, 2rem); /* Responsive margin */
 }
 
 .news-card time {
   color: rgba(218, 197, 167, 0.6);
-  font-size: 13px;
+  font-size: clamp(12px, 1.2vw, 13px); /* Responsive font size */
   line-height: 15.6px;
   letter-spacing: 1.5px;
   text-transform: uppercase;
   display: block;
-  margin-bottom: 0.625rem;
+  margin-bottom: clamp(0.5rem, 1vw, 0.625rem); /* Responsive margin */
 }
 
 .news-card h2 {
   color: #dac5a7;
   font-family: 'Quicksand', sans-serif;
-  font-size: 2rem;
-  line-height: 31.2px;
-  margin-bottom: 0.625rem;
+  font-size: clamp(1.5rem, 2vw, 2rem); /* Responsive font size */
+  line-height: 1.5;
+  margin-bottom: clamp(0.5rem, 1vw, 0.625rem); /* Responsive margin */
 }
 
 .news-card p {
   color: #dac5a7;
   font-family: 'Inter', sans-serif;
-  font-size: 1rem;
-  line-height: 25.6px;
-  margin-bottom: 2.125rem;
+  font-size: clamp(0.9rem, 1.2vw, 1rem); /* Responsive font size */
+  line-height: 1.6;
+  margin-bottom: clamp(1rem, 2vw, 2.125rem); /* Responsive margin */
 }
 
 .news-card span {
   color: #dac5a7;
-  font-size: 12px;
-  line-height: 3px;
+  font-size: clamp(10px, 1.2vw, 12px); /* Responsive font size */
+  line-height: 1.5;
   letter-spacing: 1px;
   text-transform: uppercase;
   background-color: rgba(218, 197, 167, 0.05);
   border: 1px solid rgba(218, 197, 167, 0.15);
-  padding: 0.5rem;
+  padding: clamp(0.4rem, 0.8vw, 0.5rem); /* Responsive padding */
   border-radius: 4px;
   display: inline-block;
+}
+
+/* Modal Overlay */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent dark background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: rgba(26, 26, 26, 0.9);
+  border: 1px solid rgba(218, 197, 167, 0.15);
+  padding: clamp(1.5rem, 2vw, 2.5rem); /* Responsive padding */
+  border-radius: 4px;
+  max-width: 80%; /* Limit modal width */
+  width: auto;
+  text-align: left;
+  position: relative;
+  overflow-y: auto; /* Enable scrolling if content overflows */
+  max-height: 90vh; /* Prevent modal from exceeding viewport height */
+}
+
+/* Close Button */
+.close-modal {
+  position: absolute;
+  top: clamp(0.5rem, 1vw, 1rem);
+  right: clamp(0.5rem, 1vw, 1rem);
+  font-size: clamp(1.5rem, 2vw, 2rem);
+  color: #DAC5A7;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+}
+
+.close-modal:hover {
+  opacity: 0.8;
+}
+
+/* Modal Title */
+.modal-content h2 {
+  color: #DAC5A7;
+  font-family: 'Quicksand', sans-serif;
+  font-size: clamp(1.8rem, 2.5vw, 2.5rem); /* Responsive font size */
+  line-height: 1.5;
+  margin-bottom: clamp(1rem, 1.5vw, 1.5rem); /* Responsive margin */
+}
+
+/* Modal Description */
+.modal-content p {
+  color: #DAC5A7;
+  font-family: 'Inter', sans-serif;
+  font-size: clamp(1rem, 1.2vw, 1.2rem); /* Responsive font size */
+  line-height: 1.6;
+  margin-bottom: clamp(1rem, 1.5vw, 1.5rem); /* Responsive margin */
+}
+
+/* Responsive Adjustments for Modal */
+@media (max-width: 768px) {
+  .modal-content {
+    max-width: 95%; /* Full-width modal on small screens */
+    padding: clamp(1rem, 2vw, 1.5rem); /* Reduced padding */
+  }
+
+  .modal-content h2 {
+    font-size: clamp(1.5rem, 2.5vw, 2rem); /* Smaller font size */
+  }
+
+  .modal-content p {
+    font-size: clamp(0.9rem, 1.2vw, 1rem); /* Smaller font size */
+  }
 }

@@ -5,6 +5,7 @@ import Contact from './components/Contact/Contact';
 import About from './components/About/About';
 import Media from './components/Media/Media';
 import NewsGrid from './components/News/NewsGrid';
+import Music from './components/Music/Music';
 
 const App: React.FC = () => {
   return (
@@ -16,7 +17,7 @@ const App: React.FC = () => {
           <Route path="/about" element={<About />} />
           <Route path="/media" element={<Media />} />
           <Route path="/news" element={<NewsGrid />} />
-
+          <Route path="/music" element={<Music />} />
         </Routes>
       </div>
     </Router>

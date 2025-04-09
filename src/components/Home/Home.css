@@ -1,7 +1,11 @@
 /* Import Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap');
-
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 /* General Styles */
 body {
   margin: 0;
@@ -10,23 +14,27 @@ body {
   color: #DAC5A7;
 }
 
-.home-container {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-  position: relative;
-  z-index: 1;
-}
-
-/* Background Image */
 .home-container::before {
   content: '';
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
+  width: 100%; 
   height: 100%;
-  background-size: cover;
+  background-size: cover; 
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: -1;
+  filter: brightness(0.6);
+}
+
+/* Background Image */
+.home-container::before {
+  content: '';
+  position: center;
+  top: 0;
+  left: 0;
+
   background-position: center;
   background-repeat: no-repeat;
   z-index: -1;
@@ -42,18 +50,19 @@ body {
 }
 
 .intro-section h1 {
-  font-family: 'Playfair Display', serif; /* Apply Playfair Display */
-  font-size: 4.5rem;
-  font-style: italic; /* Make the font italic */
-  font-weight: 300; /* Make the font thinner */
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2rem, 6vw, 4.5rem); /* Responsive font size */
+  font-style: italic;
+  font-weight: 300;
   margin-bottom: 20px;
   letter-spacing: -0.02em;
   color: #DAC5A7;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8); /* Add shadow for better visibility */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
 }
 
 .details-section {
   display: flex;
+  flex-wrap: wrap; /* Allow wrapping for smaller screens */
   justify-content: space-around;
   gap: 20px;
   margin: 50px auto;
@@ -62,24 +71,36 @@ body {
 }
 
 .detail-card {
-  background-color: rgba(26, 26, 26, 0.8); /* Semi-transparent dark background */
+  background-color: rgba(26, 26, 26, 0.8);
   padding: 30px;
   border-radius: 4px;
-  flex: 1;
+  flex: 1 1 calc(33.33% - 40px); /* Cards take up ~33% of the container on large screens */
   text-align: left;
-  border: 1px solid rgba(218, 197, 167, 0.15); /* Match Header border */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
-  transition: transform 0.3s ease; /* Hover effect */
+  border: 1px solid rgba(218, 197, 167, 0.15);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+}
+
+@media (max-width: 1024px) {
+  .detail-card {
+    flex: 1 1 calc(50% - 40px); /* Cards take up ~50% of the container on tablets */
+  }
+}
+
+@media (max-width: 768px) {
+  .detail-card {
+    flex: 1 1 100%; /* Full width cards on mobile */
+  }
 }
 
 .detail-card:hover {
-  transform: translateY(-10px); /* Lift card slightly on hover */
+  transform: translateY(-10px);
 }
 
 .detail-card h3 {
   font-size: 1rem;
   margin-bottom: 16px;
-  color: #DAC5A7; /* Match Header text color */
+  color: #DAC5A7;
   font-weight: 400;
   text-transform: uppercase;
   letter-spacing: 0.1em;
@@ -88,7 +109,7 @@ body {
 .detail-card p {
   font-size: 0.9rem;
   margin-bottom: 24px;
-  color: rgba(218, 197, 167, 0.7); /* Slightly lighter for readability */
+  color: rgba(218, 197, 167, 0.7);
   font-weight: 300;
   line-height: 1.6;
 }
@@ -96,30 +117,30 @@ body {
 .audio-player {
   display: flex;
   align-items: center;
-  gap: 10px; /* Space between elements */
+  gap: 10px;
   margin-top: 10px;
 }
 
 .audio-player button {
-  font-size: 36px; /* Larger play/pause icons */
+  font-size: clamp(24px, 4vw, 36px); /* Responsive icon size */
   cursor: pointer;
-  background-color: transparent; /* Remove button background */
-  border: none; /* Remove border */
+  background-color: transparent;
+  border: none;
 }
 
 .sound-wave {
-  margin-left: 10px; /* Space between play/pause and sound wave */
-  width: 100px; /* Adjusted size to fit inside the rectangle */
+  width: 100%; 
   height: 30px;
+  margin-left: 10px;
 }
 
 .about-button {
-  margin-top: 15px; /* Space between audio player and "About" button */
+  margin-top: 15px;
   background-color: transparent;
   color: #DAC5A7;
   border: none;
   cursor: pointer;
-  font-size: 0.9rem;
+  font-size: clamp(0.8rem, 2vw, 0.9rem); /* Responsive font size */
   text-transform: uppercase;
   letter-spacing: 0.1em;
   transition: color 0.2s ease;
@@ -127,10 +148,4 @@ body {
 
 .about-button:hover {
   color: rgba(218, 197, 167, 0.9);
-}
-
-.sound-wave {
-  width: 100%; /* Make the waveform fill its container */
-  height: 30px; /* Fixed height for consistency */
-  margin-left: 10px; /* Space between play/pause button and waveform */
 }

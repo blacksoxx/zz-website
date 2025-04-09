@@ -78,14 +78,14 @@
 
 /* About Section */
 .about-section {
-  background-color: rgba(26, 26, 26, 0.5); /* Semi-transparent dark background */
+  background-color: rgba(26, 26, 26, 0.9); /* Semi-transparent dark background */
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .about-section h2 {
-font-family: 'Inter Light', sans-serif;
+font-family: 'Quicksand', sans-serif;
   font-size: 1.8rem;
   font-weight: 300;
   margin-bottom: 20px;

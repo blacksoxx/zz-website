@@ -2,7 +2,7 @@ import { Helmet } from "react-helmet";
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
 import Card from "./Card";
-import { musicData } from "../../constants";
+import { musicData } from "../../constants/music";
 import "./Home.css";
 import { useState } from "react";
 
@@ -12,10 +12,8 @@ const Home = () => {
     <div
       className="home-container"
       style={{
-        backgroundImage: "url('/background.jpg')", // Path relative to the public folder
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-        backgroundRepeat: "no-repeat",
+        backgroundImage: "url('/background.jpg')"
+
       }}
     >
       <Helmet>
