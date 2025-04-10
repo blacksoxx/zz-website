@@ -17,7 +17,6 @@ body {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  background-attachment: fixed; /* Fix the background image to the viewport */
 }
 
 .media-main {

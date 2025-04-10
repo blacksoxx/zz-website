@@ -151,18 +151,15 @@ const Music: React.FC = () => {
   return (
     <>
       <Helmet>
-        <title>Music | Zied Zouari</title>
-      </Helmet>
-      <Header />
+          <title>Music | Zied Zouari</title>
+      </Helmet> 
       <div
         className="music-container"
         style={{
           backgroundImage: "url('/background.jpg')", // Path relative to the public folder
-          backgroundSize: "cover",
-          backgroundPosition: "auto",
-          backgroundRepeat: "no-repeat",
         }}
       >
+        <Header />
         <main className="music-content">
           {/* Tabs */}
           <div className="tabs">

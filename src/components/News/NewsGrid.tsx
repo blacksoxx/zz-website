@@ -60,47 +60,49 @@ const NewsGrid: React.FC = () => {
   }, []);
 
   return (
-    <div className="news-page" style={{ backgroundImage: `url('/background.jpg')` }}>
-      <Helmet>
-        <title>Home | Zied Zouari</title>
-      </Helmet>
-      <Header />
-      <main className="news-main">
-        <section className="grid">
-          {newsPosts.map((post) => (
-            <div
-              key={post.id}
-              className="news-card"
-              onClick={() => setSelectedPost(post)}
-            >
-              <img src={post.imageUrl} alt={post.title} />
-              <div className="card-content">
-                <h3>{post.title}</h3>
-                <p>{post.date}</p>
-                <p>{post.category}</p>
+    <>
+      <div className="news-page" style={{ backgroundImage: `url('/background.jpg')` }}>
+        <Helmet>
+          <title>Home | Zied Zouari</title>
+        </Helmet>
+        <Header />
+        <main className="news-main">
+          <section className="grid">
+            {newsPosts.map((post) => (
+              <div
+                key={post.id}
+                className="news-card"
+                onClick={() => setSelectedPost(post)}
+              >
+                <img src={post.imageUrl} alt={post.title} />
+                <div className="card-content">
+                  <h3>{post.title}</h3>
+                  <p>{post.date}</p>
+                  <p>{post.category}</p>
+                </div>
+              </div>
+            ))}
+          </section>
+
+          {/* Modal for displaying the full description */}
+          {selectedPost && (
+            <div className="modal-overlay" onClick={() => setSelectedPost(null)}>
+              <div
+                className="modal-content"
+                onClick={(e) => e.stopPropagation()}
+              >
+                <button className="close-modal" onClick={() => setSelectedPost(null)}>
+                  ×
+                </button>
+                <h2>{selectedPost.title}</h2>
+                <p>{selectedPost.description}</p>
               </div>
             </div>
-          ))}
-        </section>
-
-        {/* Modal for displaying the full description */}
-        {selectedPost && (
-          <div className="modal-overlay" onClick={() => setSelectedPost(null)}>
-            <div
-              className="modal-content"
-              onClick={(e) => e.stopPropagation()}
-            >
-              <button className="close-modal" onClick={() => setSelectedPost(null)}>
-                ×
-              </button>
-              <h2>{selectedPost.title}</h2>
-              <p>{selectedPost.description}</p>
-            </div>
-          </div>
-        )}
-      </main>
+          )}
+        </main>
+      </div>
       <Footer />
-    </div>
+    </>
   );
 };
 

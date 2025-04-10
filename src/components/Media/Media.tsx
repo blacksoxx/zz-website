@@ -110,59 +110,61 @@ const Media: React.FC = () => {
 ];
 
   return (
-    <div className="media-container">
-      <Helmet>
-        <title>Media | Zied Zouari</title>
-      </Helmet>
-      <Header />
-      <main className="media-main" style={{ backgroundImage: `url('/background.jpg')` }}>
-        <div className="blog-header">
-          <h1>Coin Média</h1>
-          <p>Les derniers articles qui parlent de Zied</p>
-        </div>
-        <div className="post-grid">
-          {posts.map((post) => (
-            <div
-              key={post.id}
-              className="post-card"
-              onClick={() => setSelectedPost(post)}
-            >
-              <img src={post.imageUrl} alt={post.title} />
-              <div className="post-content">
-                <span className="post-date">{post.date}</span>
-                <h2>{post.title}</h2>
+    <>
+      <div className="media-container" style={{ backgroundImage: `url('/background.jpg')` }}>
+        <Helmet>
+          <title>Media | Zied Zouari</title>
+        </Helmet>
+        <Header />
+        <main className="media-main">
+          <div className="blog-header">
+            <h1>Coin Média</h1>
+            <p>Les derniers articles qui parlent de Zied</p>
+          </div>
+          <div className="post-grid">
+            {posts.map((post) => (
+              <div
+                key={post.id}
+                className="post-card"
+                onClick={() => setSelectedPost(post)}
+              >
+                <img src={post.imageUrl} alt={post.title} />
+                <div className="post-content">
+                  <span className="post-date">{post.date}</span>
+                  <h2>{post.title}</h2>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Modal for displaying the full excerpt */}
+          {selectedPost && (
+            <div className="modal-overlay" onClick={() => setSelectedPost(null)}>
+              <div
+                className="modal-content"
+                onClick={(e) => e.stopPropagation()}
+              >
+                <button
+                  className="close-modal"
+                  onClick={() => setSelectedPost(null)}
+                >
+                  ×
+                </button>
+                <h2>{selectedPost.title}</h2>
+                <p>{selectedPost.excerpt}</p>
+                <button
+                  className="category-tag"
+                  onClick={() => window.open(selectedPost.link, '_blank')}
+                >
+                  Lire Plus sur {selectedPost.category}
+                </button>
               </div>
             </div>
-          ))}
-        </div>
-
-        {/* Modal for displaying the full excerpt */}
-        {selectedPost && (
-          <div className="modal-overlay" onClick={() => setSelectedPost(null)}>
-            <div
-              className="modal-content"
-              onClick={(e) => e.stopPropagation()}
-            >
-              <button
-                className="close-modal"
-                onClick={() => setSelectedPost(null)}
-              >
-                ×
-              </button>
-              <h2>{selectedPost.title}</h2>
-              <p>{selectedPost.excerpt}</p>
-              <button
-                className="category-tag"
-                onClick={() => window.open(selectedPost.link, '_blank')}
-              >
-                Lire Plus sur {selectedPost.category}
-              </button>
-            </div>
-          </div>
-        )}
-      </main>
+          )}
+        </main>
+      </div>
       <Footer />
-    </div>
+    </>
   );
 };
 
