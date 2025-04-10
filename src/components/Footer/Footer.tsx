@@ -11,21 +11,21 @@ const Footer: React.FC<FooterProps> = ({ onMoreTemplatesClick = () => {} }) => {
       <div className="footer-container">
         {/* Logo and Social Links Section */}
         <div className="footer-section">
-        <img src="/logo-transparent.png" alt="Logo" className="footer-logo" />
-        <div className="social-links">
+          <img src="/logo-transparent.png" alt="Logo" className="footer-logo" />
+          <div className="social-links">
             <button className="social-link">
               <span>
-                <i className="fab fa-instagram"></i> Instagram →
+                <i className="fab fa-instagram"></i> Instagram 
               </span>
             </button>
             <button className="social-link">
               <span>
-                <i className="fab fa-twitter"></i> Twitter →
+                <i className="fab fa-x-twitter"></i> X (Twitter)
               </span>
             </button>
             <button className="social-link">
               <span>
-                <i className="fab fa-facebook-f"></i> Facebook →
+                <i className="fab fa-facebook-f"></i> Facebook 
               </span>
             </button>
           </div>
@@ -34,51 +34,55 @@ const Footer: React.FC<FooterProps> = ({ onMoreTemplatesClick = () => {} }) => {
         {/* Pages Section */}
         <div className="footer-section">
           <h4 className="footer-heading">Pages</h4>
-          <ul className="footer-links">
-            <li>
-              <a href="/" className="footer-link">Home</a>
-            </li>
-            <li>
-              <a href="/music" className="footer-link">Music</a>
-            </li>
-            <li>
-              <a href="/news" className="footer-link">News</a>
-            </li>
-            <li>
-              <a href="/media" className="footer-link">Media</a>
-            </li>
-            <li>
-              <a href="/about" className="footer-link">About</a>
-            </li>
-            <li>
-              <a href="/contact" className="footer-link">Contact</a>
-            </li>
-          </ul>
+          <div className="social-links">
+            <button className="social-link">
+              <span>
+              <i className="fas fa-home"></i> Home
+              </span>
+            </button>
+            <button className="social-link">
+              <span>
+              <i className="fas fa-music"></i> Music</span>
+            </button>
+            <button className="social-link"><span>
+              <i className="fas fa-newspaper"></i> News</span>
+            </button>
+            <button className="social-link"><span>
+              <i className="fas fa-video"></i> Media</span>
+            </button>
+            <button className="social-link"><span>
+              <i className="fas fa-info-circle"></i> About</span>
+            </button>
+            <button className="social-link"><span>
+              <i className="fas fa-envelope"></i> Contact</span>
+            </button>
+          </div>
         </div>
 
         <div className="footer-section">
           <h4 className="footer-heading">Music</h4>
-          <ul className="footer-links">
-            <li>
-              <a href="https://www.youtube.com/@ZiedZouari" className="footer-link">Youtube</a>
-            </li>
-            <li>
-              <a href="https://open.spotify.com/intl-fr/artist/5AGvuJH8miMNqLLmgccErZ?si=5f6269e657234b76" className="footer-link">Spotify</a>
-            </li>
-            <li>
-              <a href="https://music.apple.com/us/artist/zied-zouari/1078724093" className="footer-link">Apple Music</a>
-            </li>
-            <li>
-              <a href="https://music.amazon.fr/artists/B01B3KY45W/zied-zouari?marketplaceId=A13V1IB3VIYZZH&musicTerritory=FR&ref=dm_sh_ZumZr2eumEwRCxJCqoD4OVGKF" className="footer-link">Amazon Music</a>
-            </li>
-          </ul>
+          <div className="social-links">
+            <button className="social-link"><span>
+              <i className="fab fa-youtube"></i> Youtube</span>
+            </button>
+            <button className="social-link"><span>
+              <i className="fab fa-spotify"></i> Spotify</span>
+            </button>
+            <button className="social-link"><span>
+              <i className="fab fa-apple"></i> Apple Music</span>
+            </button>
+            <button className="social-link"><span>
+              <i className="fab fa-amazon"></i> Amazon Music</span>
+            </button>
+          </div>
         </div>
       </div>
-      
+
       <div className="footer-bottom">
         <p>© Zied Zouari, All Rights Reserved.</p>
       </div>
     </footer>
   );
 };
+
 export default Footer;
