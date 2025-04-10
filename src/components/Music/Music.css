@@ -19,8 +19,6 @@ body {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  padding: 2rem;
-  /* Adds padding around the main content */
 }
 
 .music-content {
