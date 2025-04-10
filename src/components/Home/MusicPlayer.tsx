@@ -3,6 +3,13 @@ import { useEffect, useState } from "react";
 import WaveSurfer from "wavesurfer.js";
 import "./Home.css";
 
+// Extend the Window interface to include wavesurferGlobalInstance
+declare global {
+  interface Window {
+    wavesurferGlobalInstance: WaveSurfer | null;
+  }
+}
+
 type MusicPlayerProps = {
   soundPath: string;
   isActive: boolean;
@@ -27,18 +34,29 @@ const MusicPlayer = ({
   const onPlayPause = () => {
     if (!wavesurfer) return;
 
-    if (isActive) {
+    // If the current track is active and playing, pause it
+    if (isActive && wavesurfer.isPlaying()) {
       wavesurfer.pause();
       onPause();
     } else {
+      // Stop any other currently playing instance globally
+      if (window.wavesurferGlobalInstance && window.wavesurferGlobalInstance.isPlaying()) {
+        window.wavesurferGlobalInstance.pause();
+      }
+
+      // Play the new track
       wavesurfer.play();
       onPlay();
+
+      // Update the global instance to the current wavesurfer instance
+      window.wavesurferGlobalInstance = wavesurfer;
     }
   };
 
   useEffect(() => {
     if (!wavesurfer) return;
 
+    // Pause the current track if it's not active
     if (!isActive && wavesurfer.isPlaying()) {
       wavesurfer.pause();
     }

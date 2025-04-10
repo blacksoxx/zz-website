@@ -32,18 +32,16 @@ const Home = () => {
         <Header />
         <main className="main-content">
           <div className="intro-section">
-            <h1>Violin Player, Composer and '''</h1>
-            <p>Je ne sais pas quoi écrire</p>
+            <h1>Violoniste, Compositeur et Décorateur du silence</h1>
           </div>
           <div className="details-section">
             {musicData.map((music, index) => (
               <div
                 className="detail-card"
                 key={"music: " + index}
-                onClick={() => setSelectedCard(music)}
+                
               >
                 <h3>{music.title}</h3>
-                <p>{music.description}</p>
                 {/* Audio Player */}
                 <MusicPlayer
                   soundPath={music.soundPath}
@@ -51,7 +49,7 @@ const Home = () => {
                   onPlay={() => setActivePlayer(music.id)}
                   onPause={() => setActivePlayer(null)}
                 />
-                <button className="about-button">{music.about}</button>
+                <button className="about-button" onClick={() => setSelectedCard(music)}>{music.about}</button>
               </div>
             ))}
           </div>
@@ -76,7 +74,7 @@ const Home = () => {
                   className="category-tag"
                   onClick={() => window.open(selectedCard.link, "_blank")}
                 >
-                  Lire Plus
+                  Ecouter {selectedCard.title} sur Spotify
                 </button>
               </div>
             </div>
