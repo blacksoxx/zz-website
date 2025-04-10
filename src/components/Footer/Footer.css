@@ -8,43 +8,61 @@
   background-color: #1D1E1F;
   color: #DAC5A7;
   padding: 40px 20px;
-  width: 100%; /* Ensure the footer spans the full width */
-  max-width: 100vw; /* Prevent overflow */
-  margin: 0 auto; /* Center the footer */
+  width: 100%;
+  /* Ensure the footer spans the full width */
+  max-width: 100vw;
+  /* Prevent overflow */
+  margin: 0 auto;
+  /* Center the footer */
 }
 
 .footer-container {
   display: flex;
   justify-content: space-between;
-  max-width: 1200px; /* Limit the width of the content */
-  margin: 0 auto; /* Center the container */
+  max-width: 1200px;
+  /* Limit the width of the content */
+  margin: 0 auto;
+  /* Center the container */
   gap: 20px;
-  flex-wrap: wrap; /* Allow wrapping on smaller screens */
+  flex-wrap: wrap;
+  /* Allow wrapping on smaller screens */
 }
 
 .footer-section {
   flex: 1;
-  min-width: 200px; /* Prevent sections from becoming too narrow */
+  min-width: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .footer-logo {
-  display: flex; /* Ensures the logo is treated as a block element */
-  justify-content: center; /* Centers the logo horizontally */
-  align-items: center; /* Aligns the logo vertically */
-  margin-bottom: 20px; /* Keeps the bottom margin consistent */
+  display: flex;
+  /* Ensures the logo is treated as a block element */
+  justify-content: center;
+  /* Centers the logo horizontally */
+  align-items: center;
+  /* Aligns the logo vertically */
+  /* Keeps the bottom margin consistent */
+  max-width: 150px;
 }
 
 .footer-logo img {
-  max-width: 100%; /* Ensures the image doesn't exceed its container's width */
-  height: auto; /* Maintains the aspect ratio */
-  width: clamp(80px, 20vw, 150px); /* Responsive sizing (min: 80px, max: 150px) */
+  max-width: 100%;
+  /* Ensures the image doesn't exceed its container's width */
+  height: auto;
+  /* Maintains the aspect ratio */
+  width: clamp(80px, 20vw, 150px);
+  /* Responsive sizing (min: 80px, max: 150px) */
 }
 
 .social-links {
   display: flex;
   gap: 8px;
   margin-top: 20px;
-  flex-wrap: wrap; /* Allow buttons to wrap on smaller screens */
+  flex-wrap: wrap;
+  /* Allow buttons to wrap on smaller screens */
 }
 
 .social-link {
@@ -52,7 +70,8 @@
   color: #DAC5A7;
   border: 1px solid rgba(218, 197, 167, 0.15);
   padding: 10px 16px;
-  font-size: clamp(0.8rem, 1.5vw, 0.9rem); /* Responsive font size */
+  font-size: clamp(0.8rem, 1.5vw, 0.9rem);
+  /* Responsive font size */
   cursor: pointer;
   border-radius: 4px;
   transition: background-color 0.2s ease;
@@ -71,7 +90,8 @@
 
 .footer-heading {
   font-family: 'Quicksand', sans-serif;
-  font-size: clamp(14px, 1.5vw, 16px); /* Responsive font size */
+  font-size: clamp(14px, 1.5vw, 16px);
+  /* Responsive font size */
   margin-bottom: 10px;
   font-weight: 300;
 }
@@ -88,7 +108,8 @@
   display: block;
   margin-bottom: 10px;
   font-family: 'Inter', sans-serif;
-  font-size: clamp(12px, 1.2vw, 14px); /* Responsive font size */
+  font-size: clamp(12px, 1.2vw, 14px);
+  /* Responsive font size */
   font-weight: 300;
   letter-spacing: 1.5px;
   transition: opacity 0.2s ease;
@@ -101,7 +122,8 @@
 .footer-bottom {
   text-align: center;
   margin-top: 40px;
-  font-size: clamp(10px, 1vw, 12px); /* Responsive font size */
+  font-size: clamp(10px, 1vw, 12px);
+  /* Responsive font size */
   font-family: 'Inter', sans-serif;
   font-weight: 300;
 }
@@ -109,30 +131,37 @@
 /* Media Queries for Responsiveness */
 @media (max-width: 1024px) {
   .footer-container {
-    flex-direction: column; /* Stack sections vertically on tablets */
+    flex-direction: column;
+    /* Stack sections vertically on tablets */
     align-items: center;
   }
 
   .footer-section {
-    margin-right: 0; /* Remove horizontal spacing */
-    text-align: center; /* Center align content */
+    margin-right: 0;
+    /* Remove horizontal spacing */
+    text-align: center;
+    /* Center align content */
   }
 }
 
 @media (max-width: 768px) {
   .footer {
-    padding: 30px 15px; /* Reduce padding for smaller screens */
+    padding: 30px 15px;
+    /* Reduce padding for smaller screens */
   }
 
   .footer-logo {
-    font-size: clamp(16px, 2vw, 20px); /* Slightly smaller logo on mobile */
+    font-size: clamp(16px, 2vw, 20px);
+    /* Slightly smaller logo on mobile */
   }
 
   .social-links {
-    justify-content: center; /* Center social links */
+    justify-content: center;
+    /* Center social links */
   }
 
   .social-link {
-    padding: 8px 12px; /* Reduce padding for smaller screens */
+    padding: 8px 12px;
+    /* Reduce padding for smaller screens */
   }
 }
