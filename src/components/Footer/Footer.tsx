@@ -11,8 +11,8 @@ const Footer: React.FC<FooterProps> = ({ onMoreTemplatesClick = () => {} }) => {
       <div className="footer-container">
         {/* Logo and Social Links Section */}
         <div className="footer-section">
-          <div className="footer-logo">ZZ.</div>
-          <div className="social-links">
+        <img src="/logo-transparent.png" alt="Logo" className="footer-logo" />
+        <div className="social-links">
             <button className="social-link">
               <span>
                 <i className="fab fa-instagram"></i> Instagram →

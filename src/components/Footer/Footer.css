@@ -28,10 +28,16 @@
 }
 
 .footer-logo {
-  font-family: 'Quicksand', sans-serif;
-  font-size: clamp(18px, 2vw, 24px); /* Responsive font size */
-  font-weight: 300;
-  margin-bottom: 20px;
+  display: flex; /* Ensures the logo is treated as a block element */
+  justify-content: center; /* Centers the logo horizontally */
+  align-items: center; /* Aligns the logo vertically */
+  margin-bottom: 20px; /* Keeps the bottom margin consistent */
+}
+
+.footer-logo img {
+  max-width: 100%; /* Ensures the image doesn't exceed its container's width */
+  height: auto; /* Maintains the aspect ratio */
+  width: clamp(80px, 20vw, 150px); /* Responsive sizing (min: 80px, max: 150px) */
 }
 
 .social-links {
