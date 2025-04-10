@@ -19,7 +19,8 @@ body {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  padding: 2rem; /* Adds padding around the main content */
+  padding: 2rem;
+  /* Adds padding around the main content */
 }
 
 .music-content {
@@ -178,4 +179,22 @@ footer {
   /* Sharper edges */
   margin-top: auto;
   /* Push the footer to the bottom of the page */
+}
+
+.category-tag {
+  background-color: rgba(218, 197, 167, 0.05);
+  border: 1px solid rgba(218, 197, 167, 0.15);
+  color: #DAC5A7;
+  font-family: 'Inter', sans-serif;
+  font-size: clamp(10px, 1.2vw, 12px);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: clamp(0.4rem, 0.8vw, 0.5rem);
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.category-tag:hover {
+  background-color: rgba(218, 197, 167, 0.1);
 }
