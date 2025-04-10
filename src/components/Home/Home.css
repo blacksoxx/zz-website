@@ -137,3 +137,11 @@ body {
 .about-button:hover {
   color: rgba(218, 197, 167, 0.9);
 }
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+  margin: 20px auto;
+  padding: 0 20px;
+}

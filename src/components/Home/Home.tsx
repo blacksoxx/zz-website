@@ -1,19 +1,11 @@
 import { Helmet } from "react-helmet";
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
-import { musicData } from "../../constants/music";
+import { musicData, newsPosts, posts } from "../../constants";
 import "./Home.css";
 import { useState } from "react";
 import MusicPlayer from "./MusicPlayer";
-
-interface MusicCard {
-  id: string;
-  title: string;
-  description: string;
-  soundPath: string;
-  about: string;
-  link: string;
-}
+import { MusicCard } from "../../types";
 
 const Home = () => {
   const [activePlayer, setActivePlayer] = useState<string | null>(null);
@@ -36,11 +28,7 @@ const Home = () => {
           </div>
           <div className="details-section">
             {musicData.map((music, index) => (
-              <div
-                className="detail-card"
-                key={"music: " + index}
-                
-              >
+              <div className="detail-card" key={"music: " + index}>
                 <h3>{music.title}</h3>
                 {/* Audio Player */}
                 <MusicPlayer
@@ -49,9 +37,40 @@ const Home = () => {
                   onPlay={() => setActivePlayer(music.id)}
                   onPause={() => setActivePlayer(null)}
                 />
-                <button className="about-button" onClick={() => setSelectedCard(music)}>{music.about}</button>
+                <button
+                  className="about-button"
+                  onClick={() => setSelectedCard(music)}
+                >
+                  {music.about}
+                </button>
               </div>
             ))}
+            <div className="grid">
+              {posts.slice(0, 2).map((post) => (
+                <div key={post.id} className="post-card">
+                  <img src={post.imageUrl} alt={post.title} />
+                  <div className="post-content">
+                    <span className="post-date">{post.date}</span>
+                    <h2>{post.title}</h2>
+                  </div>
+                </div>
+              ))}
+            </div>
+            <div className="grid">
+              {newsPosts.slice(0, 2).map((post) => (
+                <div
+                  key={post.id}
+                  className="news-card"
+                >
+                  <img src={post.imageUrl} alt={post.title} />
+                  <div className="card-content">
+                    <h3>{post.title}</h3>
+                    <p>{post.date}</p>
+                    <p>{post.category}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
           {selectedCard && (
             <div
