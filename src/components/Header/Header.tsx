@@ -10,10 +10,10 @@ const Header: React.FC = () => {
           <img src="/logo-transparent.png" alt="Logo" className="logo" />
         </Link>
         <nav className="nav">
-          <Link to="/music" className="nav-link">Music</Link>
+          <Link to="/music" className="nav-link">Musique</Link>
           <Link to="/news" className="nav-link">News</Link>
           <Link to="/media" className="nav-link">Media</Link>
-          <Link to="/about" className="nav-link">About</Link>
+          <Link to="/about" className="nav-link">Zied</Link>
           <Link to="/contact" className="lets-talk-button">Contact</Link>
         </nav>
       </div>
