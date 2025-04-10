@@ -6,6 +6,7 @@ export const musicData = [
       "Visually stunning web designs that captivate your audience by blending your brand voice and customer needs.",
     soundPath: "/sound.wav",
     about: "About Baba Ameur",
+    link: "",
   },
   {
     id: "2",
@@ -14,6 +15,7 @@ export const musicData = [
       "Get custom web development solutions that are tailored to your specifications, designed to deliver a flawless user experience.",
     soundPath: "/sound.wav",
     about: "About Orion",
+    link: "",
   },
   {
     id: "3",
@@ -22,5 +24,6 @@ export const musicData = [
       "Proven SEO strategies that enhance your online performance, bringing you to the forefront of organic search results.",
     soundPath: "/sound.wav",
     about: "About Tunisian Rhapsody",
+    link: "",
   },
 ];
