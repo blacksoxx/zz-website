@@ -5,11 +5,16 @@ import { musicData, newsPosts, posts } from "../../constants";
 import "./Home.css";
 import { useState } from "react";
 import MusicPlayer from "./MusicPlayer";
-import { MusicCard } from "../../types";
+import { MusicCard, NewsPost, Post } from "../../types";
 
 const Home = () => {
   const [activePlayer, setActivePlayer] = useState<string | null>(null);
   const [selectedCard, setSelectedCard] = useState<MusicCard | null>(null);
+  const [selectedNewsPost, setSelectedNewsPost] = useState<NewsPost | null>(
+    null
+  );
+  const [selectedPost, setSelectedPost] = useState<Post | null>(null);
+
   return (
     <>
       <div
@@ -27,57 +32,68 @@ const Home = () => {
             <h1>Violoniste, Compositeur et Décorateur du silence</h1>
           </div>
           <div className="details-section">
-            {musicData.map((music, index) => (
-              <div className="detail-card" key={"music: " + index}>
-                <h3>{music.title}</h3>
-                {/* Audio Player */}
-                <MusicPlayer
-                  soundPath={music.soundPath}
-                  isActive={activePlayer === music.id}
-                  onPlay={() => setActivePlayer(music.id)}
-                  onPause={() => setActivePlayer(null)}
-                />
-                <button
-                  className="about-button"
-                  onClick={() => setSelectedCard(music)}
-                >
-                  {music.about}
-                </button>
-              </div>
-            ))}
-            <h2>Articles de presse</h2>
+            <div className="music-section">
+              {musicData.map((music, index) => (
+                <div className="detail-card" key={"music: " + index}>
+                  <h3>{music.title}</h3>
+                  {/* Audio Player */}
+                  <MusicPlayer
+                    soundPath={music.soundPath}
+                    isActive={activePlayer === music.id}
+                    onPlay={() => setActivePlayer(music.id)}
+                    onPause={() => setActivePlayer(null)}
+                  />
+                  <button
+                    className="about-button"
+                    onClick={() => setSelectedCard(music)}
+                  >
+                    {music.about}
+                  </button>
+                </div>
+              ))}
+            </div>
+            <div className="blog-header">
+              <h2>Articles de presse</h2>
+            </div>
             <div className="grid">
-                {posts
+              {posts
                 .sort(() => Math.random() - 0.5)
                 .slice(0, 2)
                 .map((post) => (
-                  <div key={post.id} className="post-card">
-                  <img src={post.imageUrl} alt={post.title} />
-                  <div className="post-content">
-                    <span className="post-date">{post.date}</span>
-                    <h2>{post.title}</h2>
-                  </div>
+                  <div
+                    key={post.id}
+                    className="post-card"
+                    onClick={() => setSelectedPost(post)}
+                  >
+                    <img src={post.imageUrl} alt={post.title} />
+                    <div className="post-content">
+                      <span className="post-date">{post.date}</span>
+                      <h2>{post.title}</h2>
+                    </div>
                   </div>
                 ))}
             </div>
-            <h2>Au coeur de l'actualité</h2>
+            <div className="blog-header">
+              <h2>Au coeur de l'actualité</h2>
+            </div>
             <div className="grid">
-            {newsPosts
+              {newsPosts
                 .sort(() => Math.random() - 0.5)
                 .slice(0, 2)
                 .map((post) => (
-                <div
-                  key={post.id}
-                  className="news-card"
-                >
-                  <img src={post.imageUrl} alt={post.title} />
-                  <div className="card-content">
-                    <h3>{post.title}</h3>
-                    <p>{post.date}</p>
-                    <p>{post.category}</p>
+                  <div
+                    key={post.id}
+                    className="news-card"
+                    onClick={() => setSelectedNewsPost(post)}
+                  >
+                    <img src={post.imageUrl} alt={post.title} />
+                    <div className="card-content">
+                      <h3>{post.title}</h3>
+                      <p>{post.date}</p>
+                      <p>{post.category}</p>
+                    </div>
                   </div>
-                </div>
-              ))}
+                ))}
             </div>
           </div>
           {selectedCard && (
@@ -103,6 +119,52 @@ const Home = () => {
                 >
                   Ecouter {selectedCard.title} sur Spotify
                 </button>
+              </div>
+            </div>
+          )}
+          {selectedPost && (
+            <div
+              className="modal-overlay"
+              onClick={() => setSelectedPost(null)}
+            >
+              <div
+                className="modal-content"
+                onClick={(e) => e.stopPropagation()}
+              >
+                <button
+                  className="close-modal"
+                  onClick={() => setSelectedPost(null)}
+                >
+                  ×
+                </button>
+                <h2>{selectedPost.title}</h2>
+                <p>{selectedPost.excerpt}</p>
+                <button
+                  className="category-tag"
+                  onClick={() => window.open(selectedPost.link, "_blank")}
+                >
+                  Lire Plus sur {selectedPost.category}
+                </button>
+              </div>
+            </div>
+          )}
+          {selectedNewsPost && (
+            <div
+              className="modal-overlay"
+              onClick={() => setSelectedNewsPost(null)}
+            >
+              <div
+                className="modal-content"
+                onClick={(e) => e.stopPropagation()}
+              >
+                <button
+                  className="close-modal"
+                  onClick={() => setSelectedNewsPost(null)}
+                >
+                  ×
+                </button>
+                <h2>{selectedNewsPost.title}</h2>
+                <p>{selectedNewsPost.description}</p>
               </div>
             </div>
           )}
