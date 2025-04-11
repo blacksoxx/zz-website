@@ -27,8 +27,7 @@ body {
 }
 
 .blog-header {
-  background-color: rgba(26, 26, 26, 0.6);
-  border: 1px solid rgba(218, 197, 167, 0.15);
+  background-color: rgba(26, 26, 26, 0.7);
   transition: transform 0.3s ease-in-out;
 }
 
