@@ -30,11 +30,12 @@ const Home = () => {
         <main className="main-content">
           <div className="intro-section">
             <h1>Violoniste et Compositeur </h1>
-            <div className="blog-header">
-              <h2>Décorateur du silence</h2>
-            </div>
+            
           </div>
           <div className="details-section">
+          <div className="blog-header">
+              <h2>Décorateur du silence</h2>
+            </div>
             <div className="music-section">
               {musicData.map((music, index) => (
                 <div className="detail-card" key={"music: " + index}>

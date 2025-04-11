@@ -34,7 +34,7 @@ const Albums: Card[] =
       "year": 2018,
       "cover": "/WhatsApp Image 2025-03-25 à 14.31.50_e68bd1e0.jpg",
       "description": "\"Maqâm Roads\" est un voyage musical initié par Zied Zouari, où violon et alto réinventent les chants ancestraux à travers des rythmes contemporains. Inspiré du maqâm, il fusionne traditions et modernité aux côtés de Julien Tekeyan (batterie, percussions – Arménie) et Abdurrahman Tarikci (basse, saz, chant – Turquie). Ce trio virtuose crée un pont entre Orient et Occident, mêlant improvisation et sonorités hybrides pour une expérience musicale unique ",
-      "link": ""
+      "link": "https://open.spotify.com/intl-fr/album/3SGeqIAanUZsrCIfUszhCC?si=cmbpssL2RF-mQwKaRH638Q"
   },
   {
       "id": 3,
@@ -43,7 +43,7 @@ const Albums: Card[] =
       "year": 2022,
       "cover": "/WhatsApp Image 2025-03-25 à 14.32.39_362e7a26.jpg",
       "description": "Zied Zouari et Ghassen Fendri, deux artistes tunisiens, fusionnent leurs racines dans Beb Diwân, un projet vibrant inspiré de la médina de Sfax, leur ville natale. À travers un mélange audacieux de musique traditionnelle tunisienne, électro et rock, ils réinventent les sonorités de la Hadhra et du stambâli. Entre improvisation et électronique, Beb Diwân célèbre l’africanité de Sfax et remet en lumière un héritage musical ancestral souvent méconnu. ",
-      "link": ""
+      "link": "https://open.spotify.com/intl-fr/album/741ITlpksGYkN9LXd2iyFH?si=rk4wQ-YFRWu9OrThsbtIaQ"
   },
   {
       "id": 4,
@@ -52,7 +52,7 @@ const Albums: Card[] =
       "year": 2025,
       "cover": "/COUVERTURE ALBUM MADE IN AFRICA.png",
       "description": "Dans \"Made in Africa\", Zied Zouari nous embarque dans une fusion sonore recréant le pont entre l'Afrique et la Tunisie, son pays natal, appelé autrefois \"Ifriqiya\". A travers son style envoutant, cet album est une réminiscence ancestrale de racines partagées et de rythmes en commun, à l'instar de la Hadhra, une musique tunisienne soufie qui a bercé l'enfance de l'artiste. Zied Zouari s'entoure d'artistes tunisiens aux univers atypiques. Entre chants, cordes et percussions, chaque invité amène une teinte singulière, ancrant l'orginalité et la puissance de ce voyage. une expérience hors des sentiers battus qui boulverse les codes et rend hommage à l'africanité dans une esthétique émancipée et contemporaine.",
-      "link": ""
+      "link": "https://open.spotify.com/intl-fr/album/2hbJ79RtGWQioKykQLQUqh?si=0_wNN7MfRNiANkmPC3hYbQ"
   }
 ]
 
@@ -239,7 +239,7 @@ const Music: React.FC = () => {
                   className="category-tag"
                   onClick={() => window.open(selectedCard.link, '_blank')}
                 >
-                  Lire Plus
+                  Ecouter sur Spotify
                 </button>
               </div>
             </div>
