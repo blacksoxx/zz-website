@@ -45,19 +45,27 @@ const Home = () => {
                 </button>
               </div>
             ))}
+            <h2>Articles de presse</h2>
             <div className="grid">
-              {posts.slice(0, 2).map((post) => (
-                <div key={post.id} className="post-card">
+                {posts
+                .sort(() => Math.random() - 0.5)
+                .slice(0, 2)
+                .map((post) => (
+                  <div key={post.id} className="post-card">
                   <img src={post.imageUrl} alt={post.title} />
                   <div className="post-content">
                     <span className="post-date">{post.date}</span>
                     <h2>{post.title}</h2>
                   </div>
-                </div>
-              ))}
+                  </div>
+                ))}
             </div>
+            <h2>Au coeur de l'actualité</h2>
             <div className="grid">
-              {newsPosts.slice(0, 2).map((post) => (
+            {newsPosts
+                .sort(() => Math.random() - 0.5)
+                .slice(0, 2)
+                .map((post) => (
                 <div
                   key={post.id}
                   className="news-card"

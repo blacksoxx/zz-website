@@ -14,7 +14,7 @@ export const musicData = [
       "Orion est le nom d’une étoile du ciel qui guide les Touaregs pendant leurs voyages. Une sorte de boussole qui leur montre le chemin du Nord. Toutefois, cette étoile n’est pas toujours visible. Mais est-ce le meilleur chemin ? le titre Orion célèbre en effet le retour au fief après de longs voyages.",
     soundPath: "/orion.mp3",
     about: "Plus sur Orion",
-    link: "",
+    link: "https://open.spotify.com/intl-fr/track/01bImbEyVZQNURYqejOoXi?si=2b7a233e65794387",
   },
   {
     id: "3",
@@ -23,7 +23,7 @@ export const musicData = [
       "‘Rhapsody Tunisienne’ est un des morceaux phare de cet album. Basé sur un rythme ternaire maghrébin, il nous livre une énergie particulièrement fraîche et vivifiante émanant d’une mélodie orientale d’une lucidité époustouflante. Les percussions y sont à l’honneur avec différentes couleurs de l’Afrique du Nord, illustrant les influences de l’artiste.",
     soundPath: "/tunisian-rhapsody.mp3",
     about: "Plus sur Tunisian Rhapsody",
-    link: "",
+    link: "https://open.spotify.com/intl-fr/track/0esvZitNaApTBsAPPOaWWE?si=2bec7fd35ca646bd",
   },
   {
     id: "4",
