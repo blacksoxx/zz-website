@@ -130,7 +130,7 @@ const grandsEnsembles: Card[] = [
       "year": 2024,
       "cover": "/485354243_1163527521899412_7900127028119031839_n.jpg",
       "description": "Zied Zouari est également directeur musical de Rouh el Arab, un projet orchestral grandiose qui réunit sur scène 100 artistes de 11 nationalités arabes différentes, organisé à l'occasion de la clôture du festival des radios et télévisions arabes en Juin 2024.",
-      "link": ""
+      "link": "https://www.assabahnews.tn/ar/مقالات-الصباح/99826-روح-العرب-في-اختتام-المهرجان-العربي-للإذاعة-والتلفزيون-عرض-فني-يعكس-ثراء-الموروث-الموسيقي-العربي-وعنوان-لوحدة-العرب-عبر-الفنون"
   },
   {
       "id": 4,
@@ -235,12 +235,14 @@ const Music: React.FC = () => {
                 <p>{selectedCard.artist}</p>
                 <p>{selectedCard.year}</p>
                 <p>{selectedCard.description}</p>
+                {selectedCard.link && (
                 <button
                   className="category-tag"
                   onClick={() => window.open(selectedCard.link, '_blank')}
                 >
-                  Ecouter sur Spotify
+                  Plus
                 </button>
+              )}
               </div>
             </div>
           )}
