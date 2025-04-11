@@ -29,7 +29,8 @@ const Home = () => {
         <Header />
         <main className="main-content">
           <div className="intro-section">
-            <h1>Violoniste, Compositeur et Décorateur du silence</h1>
+            <h1>Violoniste et Compositeur </h1>
+            <h2>Décorateur du silence</h2>
           </div>
           <div className="details-section">
             <div className="music-section">

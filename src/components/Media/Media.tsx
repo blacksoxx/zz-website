@@ -29,8 +29,7 @@ const Media: React.FC = () => {
         <Header />
         <main className="media-main">
           <div className="blog-header">
-            <h1>Coin Média</h1>
-            <p>Les derniers articles qui parlent de Zied</p>
+            <h1>Médias</h1>
           </div>
           <div className="post-grid">
             {posts.map((post) => (

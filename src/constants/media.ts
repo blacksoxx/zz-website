@@ -32,7 +32,7 @@ export const posts: Post[] = [
       "Chaque pièce connote un engagement ou une histoire telle que Orion, l’étoile qui guide les subsahariens sur le chemin du nord.",
     category: "alarab.co.uk",
     link: "https://alarab.co.uk/%D9%85%D8%A7%D9%8A%D8%AF-%D8%A5%D9%86-%D8%A3%D9%81%D8%B1%D9%8A%D9%83%D8%A7-%D9%84%D9%88%D8%AD%D8%A9-%D9%85%D9%88%D8%B3%D9%8A%D9%82%D9%8A%D8%A9-%D8%A3%D9%81%D8%B1%D9%8A%D9%82%D9%8A%D8%A9-%D9%8A%D9%82%D9%88%D8%AF%D9%87%D8%A7-%D8%A7%D9%84%D8%AA%D9%88%D9%86%D8%B3%D9%8A-%D8%B2%D9%8A%D8%A7%D8%AF-%D8%A7%D9%84%D8%B2%D9%88%D8%A7%D8%B1%D9%8A?fbclid=IwY2xjawJeZ-JleHRuA2FlbQIxMAABHt8-1ZntY9zupbLjyQHCSJ1s151gSMqjyjofK3gmT-lH8GpKbqtHs7RWqB7Q_aem_nx8qkxWiJ0OEu8TId7p9NA&mibextid=oEMz7o",
-    imageUrl: "/image-1_18.jpg",
+    imageUrl: "/photo.jpg",
   },
   {
     id: 4,

@@ -57,8 +57,7 @@ const Contact: React.FC = () => {
         <Header />
         <main className="contact-content">
           <div className="contact-form-section">
-            <h2>CONTACT</h2>
-            <h1>Let's get in touch</h1>
+            <h1>CONTACT</h1>
             <form
               ref={formRef}
               onSubmit={handleSubmit}

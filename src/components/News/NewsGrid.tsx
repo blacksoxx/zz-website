@@ -28,8 +28,7 @@ const NewsGrid: React.FC = () => {
         <Header />
         <main className="news-main">
           <div className="blog-header">
-            <h1>Coin Média</h1>
-            <p>Les derniers articles qui parlent de Zied</p>
+            <h1>Actualités</h1>
           </div>
           <section className="grid">
             {newsPosts.map((post) => (

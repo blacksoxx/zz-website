@@ -13,7 +13,7 @@ const Header: React.FC = () => {
           <Link to="/music" className="nav-link">Musique</Link>
           <Link to="/news" className="nav-link">News</Link>
           <Link to="/media" className="nav-link">Media</Link>
-          <Link to="/about" className="nav-link">Zied</Link>
+          <Link to="/about" className="nav-link">Bio</Link>
           <Link to="/contact" className="lets-talk-button">Contact</Link>
         </nav>
       </div>
